@@ -1,0 +1,17 @@
+sqlite3:
+  adapter: sqlite3
+  database: test/graphist.sqlite3.db
+
+mysql:
+  adapter: mysql
+  host: localhost
+  username: root
+  password: 
+  database: graphist_test
+
+postgresql:
+  adapter: postgresql
+  username: postgres
+  password: 
+  database: graphist_test
+  min_messages: ERROR
