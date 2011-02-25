@@ -14,6 +14,7 @@ module Chronicler
           :text => clazz.to_s,
           :type => "line",
           :font_size => 10,
+          :colour => ["#FF0000","#00FF00","#0000FF"].shuffle.first,
           :values => values
         }
         output[:y_axis][:max] = (output[:y_axis][:max] < values.max ? values.max : output[:y_axis][:max])
