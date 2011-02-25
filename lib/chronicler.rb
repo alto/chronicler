@@ -1,2 +1,1 @@
-require 'chronicler/line'
-require 'chronicler/graph'
+require 'chronicler/engine' if defined?(Rails) && Rails::VERSION::MAJOR == 3

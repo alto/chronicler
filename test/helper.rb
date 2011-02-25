@@ -11,9 +11,10 @@ require 'test/unit'
 # require 'shoulda'
 require 'active_record'
 
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..'))
+# $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-require 'chronicler'
+require 'lib/chronicler'
 require 'models/user'
 
 def load_schema

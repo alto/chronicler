@@ -1,4 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/helper')
+require "app/models/chronicler/graph"
 
 class GraphTest < ActiveSupport::TestCase
   
@@ -12,7 +13,7 @@ class GraphTest < ActiveSupport::TestCase
   end
 
   test "creating a graph" do
-    graph = Graph.create([User])
+    graph = Chronicler::Graph.create([User])
     # puts graph.to_json
     assert_equal "User", graph[:elements][0][:text]
     assert_equal [1,3,3,3,3,3,3,3,3,3,3,4,5,5,5], graph[:elements][0][:values]
