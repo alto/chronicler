@@ -1,5 +1,7 @@
 module Chronicler
   class Graph
+    
+    COLORS = ["#FF0000","#00FF00","#0000FF"]
   
     def self.create(clazzes)
       output = {
@@ -8,13 +10,13 @@ module Chronicler
         :elements => []
       }
 
-      clazzes.each do |clazz|
+      clazzes.each_with_index do |clazz, i|
         values = Line.retrieve_data_for(clazz, :cumulate => true)
         output[:elements] << {
           :text => clazz.to_s,
           :type => "line",
           :font_size => 10,
-          :colour => ["#FF0000","#00FF00","#0000FF"].shuffle.first,
+          :colour => COLORS[i], # TODO support more than 3 colors [thorsten, 2011-02-27]
           :values => values
         }
         output[:y_axis][:max] = (output[:y_axis][:max] < values.max ? values.max : output[:y_axis][:max])
